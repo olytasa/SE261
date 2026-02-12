@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&display=swap");
+
+:root{
+	--ink:#1f2937;
+	--muted:#6b7280;
+	--edge:#e5e7eb;
+	--accent:#166534;
+	--accent-soft:#e7f6ed;
+	--paper:#ffffff;
+}
+
+*{box-sizing:border-box}
+
+body{
+	font-family:"Source Sans 3",system-ui,Arial,sans-serif;
+	max-width:720px;
+	margin:44px auto;
+	padding:0 16px 48px;
+	color:var(--ink);
+	background:linear-gradient(180deg,#f7f5ef 0%,#fafafa 60%,#ffffff 100%);
+}
+
+h1,h2{
+	font-family:"Fraunces",serif;
+	letter-spacing:0.2px;
+}
+
+h1{font-size:32px;margin:0 0 12px}
+h2{font-size:20px;margin:24px 0 12px;color:#4b5563}
+
+form{
+	display:flex;
+	gap:10px;
+	margin:12px 0 16px;
+}
+
+.search-bar{
+	display:flex;
+	gap:10px;
+	margin:6px 0 10px;
+}
+
+input{
+	flex:1;
+	padding:10px 12px;
+	border:1px solid var(--edge);
+	border-radius:8px;
+	background:var(--paper);
+	font-size:14px;
+	transition:border-color 120ms ease,box-shadow 120ms ease;
+}
+
+input:focus{
+	outline:none;
+	border-color:#86efac;
+	box-shadow:0 0 0 3px var(--accent-soft);
+}
+
+button{
+	padding:10px 14px;
+	cursor:pointer;
+	border:1px solid #15803d;
+	border-radius:8px;
+	background:var(--accent);
+	color:#ffffff;
+	font-weight:600;
+	transition:transform 120ms ease,box-shadow 120ms ease;
+}
+
+button:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(22,101,52,0.2)}
+button:active{transform:translateY(0)}
+
+#book-list{
+	border:1px solid var(--edge);
+	border-radius:10px;
+	background:var(--paper);
+	overflow:hidden;
+}
+
+.book-item{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	padding:10px 12px;
+	border-bottom:1px solid var(--edge);
+	animation:fadeUp 180ms ease both;
+}
+
+.book-item:last-child{border-bottom:none}
+
+.delete-btn{
+	border-color:#b91c1c;
+	background:#b91c1c;
+}
+
+.delete-btn:hover{box-shadow:0 6px 16px rgba(185,28,28,0.2)}
+
+@keyframes fadeUp{
+	from{opacity:0;transform:translateY(4px)}
+	to{opacity:1;transform:translateY(0)}
+}
+
+@media (max-width:600px){
+	form,.search-bar{flex-direction:column}
+	button{width:100%}
+}
